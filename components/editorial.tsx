@@ -6,36 +6,39 @@ import { motion, useInView } from "framer-motion";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const articles = [
+const kols = [
   {
     id: 1,
     img: "/image/home/09.jpg",
-    category: "美學觀點",
-    enCategory: "Philosophy",
-    title: "美，超越產品本身",
-    subtitle: "情緒是現代美妝的核心語言",
-    excerpt: "美不再只是塗抹的動作，而是一種感受。新奢華活在觸感、香氣與儀式感之中。",
-    reading: "6",
+    category: "美妝保養",
+    enCategory: "Beauty",
+    name: "林曉晴",
+    handle: "@xiaoming.beauty",
+    platform: "Instagram",
+    followers: "18.5萬 粉絲",
+    quote: "WIS 讓我找到了真正適合亞洲膚質的保養方式，每一款產品都是精心策劃的美麗體驗。",
   },
   {
     id: 2,
     img: "/image/home/10.jpg",
-    category: "潮流文化",
-    enCategory: "Culture",
-    title: "情緒即美麗",
-    subtitle: "當品牌開始對靈魂說話",
-    excerpt: "最強大的美妝品牌，賣的不是產品，而是一種你想成為的樣子。",
-    reading: "4",
+    category: "時尚彩妝",
+    enCategory: "Fashion",
+    name: "陳美珊",
+    handle: "@melissa.glam",
+    platform: "YouTube",
+    followers: "32萬 訂閱",
+    quote: "與 WIS 合作，讓我深刻理解什麼是真正的高端品牌美學。",
   },
   {
     id: 3,
     img: "/image/home/09.jpg",
-    category: "視覺美學",
-    enCategory: "Aesthetics",
-    title: "視覺奢華的崛起",
-    subtitle: "設計，成為新時代的溢價語言",
-    excerpt: "當配方趨近完美，包裝成為最後的差異戰場。視覺奢華是新貨幣。",
-    reading: "5",
+    category: "生活風格",
+    enCategory: "Lifestyle",
+    name: "王子涵",
+    handle: "@zihan.lifestyle",
+    platform: "小紅書",
+    followers: "45萬 粉絲",
+    quote: "WIS 的品牌理念和我的生活美學完美契合，每次使用都是一種享受。",
   },
 ];
 
@@ -43,25 +46,12 @@ export default function Editorial() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
-  const [large, ...smalls] = articles;
+  const [large, ...smalls] = kols;
 
-  /* Large card height drives the row — small cards use flex-1 to fill exactly */
   const LARGE_H = "clamp(380px, 50vw, 620px)";
 
   return (
     <section className="relative bg-[#F5EFE8] wis-section overflow-hidden">
-      {/* Decorative BG letter */}
-      <div
-        aria-hidden
-        className="absolute bottom-0 left-0 select-none pointer-events-none leading-none wis-display"
-        style={{
-          fontSize: "clamp(8rem, 22vw, 18rem)",
-          color: "rgba(75,36,56,0.025)",
-        }}
-      >
-        美
-      </div>
-
       <div ref={ref} className="wis-container">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
@@ -72,7 +62,7 @@ export default function Editorial() {
             className="flex items-center gap-4 mb-5"
           >
             <div className="h-px w-8 bg-[#8C6A78]/35" />
-            <span className="wis-label text-[#8C6A78]">品牌故事 · Editorial</span>
+            <span className="wis-label text-[#8C6A78]">KOL 代言 · Influencers</span>
             <div className="h-px w-8 bg-[#8C6A78]/35" />
           </motion.div>
 
@@ -83,7 +73,7 @@ export default function Editorial() {
             className="wis-display text-[#1a1a1a]"
             style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            美的故事
+            KOL 專區
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -92,14 +82,22 @@ export default function Editorial() {
             className="wis-italic text-[#4B2438] mt-2"
             style={{ fontSize: "clamp(1.1rem, 2vw, 1.6rem)" }}
           >
-            &amp; 趨勢觀察
+            品牌寫手 &amp; 意見領袖
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.9, delay: 0.26 }}
+            className="text-sm text-[#4B2438]/65 mt-4 leading-relaxed max-w-md"
+          >
+            與各領域頂尖 KOL 攜手合作，透過真實體驗傳遞 WIS 品牌的美麗哲學。
           </motion.p>
 
           <motion.a
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            href="/news"
+            transition={{ duration: 0.9, delay: 0.34 }}
+            href="/kol"
             className="inline-flex items-center gap-2 wis-label text-[#8C6A78] hover:text-[#4B2438]
                        transition-colors duration-300 mt-6"
             style={{ letterSpacing: "0.3em" }}
@@ -111,13 +109,13 @@ export default function Editorial() {
           </motion.a>
         </div>
 
-        {/* Grid: large left | two smalls right — row height driven by LARGE_H */}
+        {/* Grid: large left | two smalls right */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2"
           style={{ gridTemplateRows: `${LARGE_H}` }}
         >
 
-          {/* Large article */}
+          {/* Large KOL card */}
           <motion.article
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -131,13 +129,13 @@ export default function Editorial() {
             >
               <Image
                 src={large.img}
-                alt={large.title}
+                alt={large.name}
                 fill
                 className="object-cover object-center"
                 sizes="(max-width:768px) 100vw, 50vw"
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0306]/90 via-[#0a0306]/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0306]/92 via-[#0a0306]/30 to-transparent" />
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
@@ -147,35 +145,32 @@ export default function Editorial() {
             <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
               <div className="flex items-center gap-2 mb-3">
                 <span className="wis-label text-[#8C6A78]">{large.category}</span>
-                <span className="text-[#8C6A78]/30 text-xs">·</span>
-                <span className="wis-label text-[#8C6A78]/45">{large.enCategory}</span>
+                <span className="text-[#8C6A78]/40 text-xs">·</span>
+                <span className="wis-label text-[#8C6A78]/65">{large.platform}</span>
               </div>
               <h3
-                className="wis-display text-[#F5EFE8] mb-2"
+                className="wis-display text-[#F5EFE8] mb-1"
                 style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)" }}
               >
-                {large.title}
+                {large.name}
               </h3>
-              <p
-                className="wis-italic text-[#F5EFE8]/50 mb-3 leading-relaxed"
-                style={{ fontSize: "clamp(0.85rem, 1.3vw, 1rem)" }}
-              >
-                {large.subtitle}
+              <p className="wis-label text-[#8C6A78]/80 mb-4" style={{ letterSpacing: "0.2em" }}>
+                {large.handle}
               </p>
-              <p className="text-sm text-[#F5EFE8]/35 leading-relaxed mb-5 hidden md:block max-w-sm">
-                {large.excerpt}
+              <p className="text-sm text-[#F5EFE8]/70 leading-relaxed mb-5 hidden md:block max-w-sm">
+                &ldquo;{large.quote}&rdquo;
               </p>
-              <span className="wis-label text-[#8C6A78]/55" style={{ letterSpacing: "0.28em" }}>
-                閱讀 {large.reading} 分鐘
+              <span className="wis-label text-[#8C6A78]/75" style={{ letterSpacing: "0.28em" }}>
+                {large.followers}
               </span>
             </div>
           </motion.article>
 
-          {/* Two small articles stacked — flex-1 makes them split the row height equally */}
+          {/* Two small KOL cards stacked */}
           <div className="flex flex-col gap-1.5 md:gap-2">
-            {smalls.map((a, i) => (
+            {smalls.map((k, i) => (
               <motion.article
-                key={a.id}
+                key={k.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.9, delay: 0.18 + i * 0.14, ease: EASE }}
@@ -189,8 +184,8 @@ export default function Editorial() {
                     transition={{ duration: 0.6, ease: EASE }}
                   >
                     <Image
-                      src={a.img}
-                      alt={a.title}
+                      src={k.img}
+                      alt={k.name}
                       fill
                       className="object-cover object-center"
                       sizes="20vw"
@@ -206,28 +201,25 @@ export default function Editorial() {
                               group-hover:border-[#4B2438]/18 transition-colors duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2.5">
-                    <span className="wis-label text-[#8C6A78]">{a.category}</span>
-                    <span className="text-[#8C6A78]/28 text-xs">·</span>
-                    <span className="wis-label text-[#8C6A78]/38">{a.enCategory}</span>
+                    <span className="wis-label text-[#8C6A78]">{k.category}</span>
+                    <span className="text-[#8C6A78]/40 text-xs">·</span>
+                    <span className="wis-label text-[#8C6A78]/65">{k.platform}</span>
                   </div>
                   <h3
-                    className="wis-display text-[#1a1a1a] leading-snug mb-1.5
+                    className="wis-display text-[#1a1a1a] leading-snug mb-1
                                group-hover:text-[#4B2438] transition-colors duration-300"
                     style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.2rem)" }}
                   >
-                    {a.title}
+                    {k.name}
                   </h3>
-                  <p
-                    className="wis-italic text-[#4B2438]/50 mb-2.5 leading-relaxed line-clamp-2"
-                    style={{ fontSize: "0.82rem" }}
-                  >
-                    {a.subtitle}
+                  <p className="wis-label text-[#8C6A78]/70 mb-2.5" style={{ letterSpacing: "0.18em" }}>
+                    {k.handle}
                   </p>
-                  <p className="text-xs text-[#1a1a1a]/38 leading-relaxed line-clamp-2 hidden sm:block">
-                    {a.excerpt}
+                  <p className="text-xs text-[#1a1a1a]/60 leading-relaxed line-clamp-2 hidden sm:block">
+                    &ldquo;{k.quote}&rdquo;
                   </p>
-                  <span className="wis-label text-[#8C6A78]/45 mt-3 block" style={{ letterSpacing: "0.28em" }}>
-                    閱讀 {a.reading} 分鐘
+                  <span className="wis-label text-[#8C6A78]/70 mt-3 block" style={{ letterSpacing: "0.28em" }}>
+                    {k.followers}
                   </span>
                 </div>
               </motion.article>

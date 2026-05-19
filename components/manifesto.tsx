@@ -55,7 +55,7 @@ export default function Manifesto() {
           className="flex items-center gap-4 mb-14 md:mb-20"
         >
           <div className="h-px w-8 bg-[#8C6A78]/40" />
-          <span className="text-[10px] tracking-[0.5em] text-[#8C6A78] uppercase">品牌理念 · Our Philosophy</span>
+          <span className="text-[0.72rem] tracking-[0.5em] text-[#8C6A78] uppercase font-medium">品牌理念 · Our Philosophy</span>
         </motion.div>
 
         {/* 大標：中文宣言分行顯示 */}
@@ -103,7 +103,7 @@ export default function Manifesto() {
             <p className="text-base md:text-lg text-[#1a1a1a]/70 leading-loose tracking-wide">
               在 WIS，我們在創意與市場之間點燃火花，在概念與成長之間創造動能，推動美的前進。
             </p>
-            <p className="text-sm text-[#1a1a1a]/50 leading-loose tracking-wide">
+            <p className="text-sm text-[#1a1a1a]/65 leading-loose tracking-wide">
               At WIS, we spark ideas between creativity and market — between concept and growth,
               we create the momentum that drives beauty forward.
             </p>
@@ -138,7 +138,7 @@ export default function Manifesto() {
           className="mt-16 md:mt-28 flex items-center gap-5"
         >
           <div className="h-px flex-1 bg-[#4B2438]/10" />
-          <span className="text-[9px] tracking-[0.4em] text-[#8C6A78]/50 uppercase">台北 · 台灣 · Taipei, Taiwan</span>
+          <span className="text-[0.68rem] tracking-[0.4em] text-[#8C6A78]/65 uppercase font-medium">台北 · 台灣 · Taipei, Taiwan</span>
           <div className="h-px flex-1 bg-[#4B2438]/10" />
         </motion.div>
       </div>

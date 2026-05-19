@@ -57,10 +57,10 @@ body {
 
 .wis-label {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* ─── Layout helpers ────────────────────────────────── */

@@ -118,7 +118,7 @@ export default function Footer() {
           transition={{ duration: 1, delay: 0.3 }}
           className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3"
         >
-          <p className="wis-label text-[#F5EFE8]/55 text-center sm:text-left" style={{ letterSpacing: "0.18em" }}>
+          <p className="wis-label text-[#F5EFE8]/70 text-center sm:text-left" style={{ letterSpacing: "0.18em" }}>
             © {new Date().getFullYear()} 華資粧業股份有限公司. ALL RIGHTS RESERVED.
           </p>
           <p className="wis-italic text-[#8C6A78]/70" style={{ fontSize: "0.65rem" }}>

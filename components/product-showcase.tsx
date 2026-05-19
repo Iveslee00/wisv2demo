@@ -151,7 +151,7 @@ export default function ProductShowcase() {
   const inView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="products" className="relative bg-[#F5EFE8] overflow-hidden">
+    <section id="products" className="relative bg-[#F5EFE8] overflow-hidden pt-16 md:pt-20">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -159,7 +159,7 @@ export default function ProductShowcase() {
       />
 
       {/* Header — constrained to wis-container */}
-      <div ref={ref} className="wis-container pt-12 md:pt-16 pb-6 md:pb-10">
+      <div ref={ref} className="wis-container pt-6 md:pt-8 pb-6 md:pb-10">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 14 }}

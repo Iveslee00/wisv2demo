@@ -84,7 +84,7 @@ export default function FeaturedBrands() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.28 }}
-            className="text-sm text-[#4B2438]/50 mt-4 leading-relaxed max-w-sm"
+            className="text-sm text-[#4B2438]/70 mt-4 leading-relaxed max-w-sm"
           >
             精心策選，引領美妝趨勢、文化與現代生活風格的頂尖品牌。
           </motion.p>
@@ -135,7 +135,7 @@ export default function FeaturedBrands() {
                 >
                   {brand.zhName}
                 </h3>
-                <p className="wis-label text-[#F5EFE8]/35" style={{ letterSpacing: "0.22em" }}>
+                <p className="wis-label text-[#F5EFE8]/60" style={{ letterSpacing: "0.22em" }}>
                   {brand.name}
                 </p>
                 {/* Tagline on hover */}
@@ -165,7 +165,7 @@ export default function FeaturedBrands() {
                          hover:pl-3 transition-all duration-400"
             >
               <div className="flex items-center gap-5 md:gap-8 min-w-0">
-                <span className="wis-label text-[#8C6A78]/60 hidden sm:block shrink-0" style={{ letterSpacing: "0.25em" }}>
+                <span className="wis-label text-[#8C6A78]/80 hidden sm:block shrink-0" style={{ letterSpacing: "0.25em" }}>
                   {b.no}
                 </span>
                 <div className="min-w-0">
@@ -177,13 +177,13 @@ export default function FeaturedBrands() {
                       {b.zhName}
                     </h3>
                     <span
-                      className="wis-label text-[#8C6A78]/38"
+                      className="wis-label text-[#8C6A78]/60"
                       style={{ letterSpacing: "0.22em" }}
                     >
                       {b.name}
                     </span>
                   </div>
-                  <p className="wis-label text-[#8C6A78]/38 mt-1.5" style={{ letterSpacing: "0.28em" }}>
+                  <p className="wis-label text-[#8C6A78]/60 mt-1.5" style={{ letterSpacing: "0.28em" }}>
                     {b.origin}
                   </p>
                 </div>

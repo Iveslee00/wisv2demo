@@ -106,6 +106,7 @@ export default function Hero() {
   const handleExitComplete = () => {
     document.body.style.overflow = "";
     setHidden(true);
+    window.dispatchEvent(new CustomEvent("wis:hero-exited"));
   };
 
   const fadeUp = (delay: number) => ({
